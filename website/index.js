@@ -28,7 +28,7 @@ var typed = new Typed('#typed', {
     strings: [
         //'Cloud Engineer',
         'Software Engineer',
-       // 'DevOps Engineer'
+        //DevOps Engineer'
     ],
     typeSpeed: 50,
     backSpeed: 50,
