@@ -63,3 +63,40 @@ async function updateCounter() {
     counter.innerHTML = `👀 Views: ${data}`;
 }
 updateCounter();
+
+
+
+		function submitToAPI(e) {
+            e.preventDefault();
+            var URL = "https://b0yfgy0o2m.execute-api.ap-south-1.amazonaws.com/stage/contact_us";
+
+            var name = $("#name-input").val();
+            var email = $("#email-input").val();
+            var message = $("#message-input").val();
+            var data = {
+               name : name,
+               email : email,
+               message : message
+             };
+
+            $.ajax({
+              type: "POST",
+              url : "https://b0yfgy0o2m.execute-api.ap-south-1.amazonaws.com/stage/contact_us",
+              dataType: "json",
+              crossDomain: "true",
+              contentType: "application/json; charset=utf-8",
+              data: JSON.stringify(data),
+
+              
+              success: function () {
+                // clear form and show a success message
+                alert("Thanks for contacting us, we will get back to you soon");
+                document.getElementById("contact-form").reset();
+            location.reload();
+              },
+              error: function () {
+                // show an error message
+                alert("UnSuccessfull");
+              }});
+          }
+
