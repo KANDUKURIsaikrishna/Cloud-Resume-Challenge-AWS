@@ -68,7 +68,7 @@ updateCounter();
 
 		function submitToAPI(e) {
             e.preventDefault();
-            var URL = "https://b0yfgy0o2m.execute-api.ap-south-1.amazonaws.com/stage/contact_us";
+            var URL = "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod";
 
             var name = $("#name-input").val();
             var email = $("#email-input").val();
@@ -81,7 +81,7 @@ updateCounter();
 
             $.ajax({
               type: "POST",
-              url : "https://b0yfgy0o2m.execute-api.ap-south-1.amazonaws.com/stage/contact_us",
+              url : "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod",
               dataType: "json",
               crossDomain: "true",
               contentType: "application/json; charset=utf-8",
