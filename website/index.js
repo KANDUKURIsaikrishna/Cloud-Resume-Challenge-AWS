@@ -64,39 +64,41 @@ async function updateCounter() {
 }
 updateCounter();
 
+function submitToAPI(e) {
 
+    e.preventDefault();
+    var URL = "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod";
 
-		function submitToAPI(e) {
-            e.preventDefault();
-            var URL = "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod";
+    var name = $("#name-input").val();
+    var email = $("#email-input").val();
+    var message = $("#message-input").val();
+    var data = {
+        name : name,
+        email : email,
+        message : message
+        };
 
-            var name = $("#name-input").val();
-            var email = $("#email-input").val();
-            var message = $("#message-input").val();
-            var data = {
-               name : name,
-               email : email,
-               message : message
-             };
-
-            $.ajax({
-              type: "POST",
-              url : "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod",
-              dataType: "json",
-              crossDomain: "true",
-              contentType: "application/json; charset=utf-8",
-              data: JSON.stringify(data),
+    $.ajax({
+        type: "POST",
+        url : "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod",
+        dataType: "json",
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
 
               
-              success: function () {
-                // clear form and show a success message
-                alert("Thanks for contacting us, we will get back to you soon");
-                document.getElementById("contact-form").reset();
-            location.reload();
-              },
-              error: function () {
-                // show an error message
-                alert("UnSuccessfull");
-              }});
-          }
+    success: function () {
+        // clear form and show a success message
+        alert("Thanks for contacting us, we will get back to you soon");
+        document.getElementById("contact-form").reset();
+    location.reload();
+        },
+        error: function () {
+        // show an error message
+        alert("UnSuccessfull");
+        }});
+    }
+
+
+		
 
