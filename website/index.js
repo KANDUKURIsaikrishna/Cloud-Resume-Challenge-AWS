@@ -67,7 +67,7 @@ updateCounter();
 function submitToAPI(e) {
 
     e.preventDefault();
-    var URL = "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod";
+    var URL = "https://oqty4s5uvj.execute-api.eu-north-1.amazonaws.com/Prod/contact_us";
 
     var name = $("#name-input").val();
     var email = $("#email-input").val();
@@ -80,7 +80,7 @@ function submitToAPI(e) {
 
     $.ajax({
         type: "POST",
-        url : "https://9iq1eoqrj4.execute-api.us-east-1.amazonaws.com/prod",
+        url : "https://oqty4s5uvj.execute-api.eu-north-1.amazonaws.com/Prod/contact_us",
         dataType: "json",
         crossDomain: "true",
         contentType: "application/json; charset=utf-8",
